@@ -2,7 +2,7 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  background: linear-gradient(180deg, #0d47a1 0%, #1565c0 60%, #1e88e5 100%);
+  background: linear-gradient(180deg, #004d4d 0%, #006666 60%, #008080 100%);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
   color: #f4f8ff;
 }
@@ -61,7 +61,7 @@ body {
 .controls { margin-top: 14px; }
 .btn-next {
   padding: 12px 22px; font-weight: 700; border-radius: 12px;
-  background: #bbdefb; color: #0b2a56; border: 0;
+  background: #e3f2fd; color: #0b2a56; border: 0;
   box-shadow: 0 8px 18px rgba(0,0,0,0.25);
 }
 .btn-next:hover { filter: brightness(1.05); }

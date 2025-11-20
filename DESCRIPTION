@@ -1,11 +1,15 @@
-Package: coralquiz
-Title: Coral Identification Flashcards and Quiz
+Package: rls_habitat_quiz
+Title: Reef Life Survey Habitat labels Flashcards and Quiz
 Version: 0.1.0
-Authors@R: person("Matthew Doherty", "", role = c("aut","cre"), email = "dohertym@protonmail.com")
-Description: Shiny flashcards and a simple quiz for coral identification from folder-based photo libraries.
+Authors@R: c(person("Matthew Doherty", "", role = c("aut","cph"), email = "dohertym@protonmail.com"),person("Lizzi Oh", 
+           role = c("aut", "cre"), 
+           email = "elizabeth.oh@utas.edu.au"))
+Description: Shiny flashcards and a simple quiz to learn the RLS benthic habitat labels from folder-based photo libraries.
 License: MIT + file LICENSE
+URL: https://github.com/LizziOh/rls_habitat_quiz
+BugReports: https://github.com/LizziOh/rls_habitat_quiz/issues
 Depends: R (>= 4.1)
 Imports: shiny, stringr, purrr, dplyr, tidyr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3

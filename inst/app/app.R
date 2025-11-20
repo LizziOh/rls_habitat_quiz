@@ -6,7 +6,7 @@ library(dplyr)
 library(tidyr)
 
 # -------- helpers --------
-valid_ext <- c("jpg","jpeg","png","webp")
+valid_ext <- c("jpg","jpeg","png","webp","JPG")
 nice_species <- function(x) gsub("_", " ", x)
 
 collect_sources <- function(base_dir) {
@@ -34,16 +34,17 @@ img_src <- function(base_path_name, source, species_key, filename) {
 }
 
 # -------- runtime options from practice()/quiz() --------
-opt_mode     <- getOption("coralquiz.mode", "practice")         # "practice" or "quiz"
-opt_n        <- getOption("coralquiz.n", NA_integer_)           # number of Qs in quiz
-opt_save_csv <- isTRUE(getOption("coralquiz.save_csv", FALSE))
-opt_csv_path <- getOption("coralquiz.csv_path", getwd())
-opt_user     <- getOption("coralquiz.user", NA_character_)
-opt_default  <- getOption("coralquiz.default_source", NULL)
+opt_mode     <- getOption("rlsquiz.mode", "practice")         # "practice" or "quiz"
+opt_n        <- getOption("rlsquiz.n", NA_integer_)           # number of Qs in quiz
+opt_save_csv <- isTRUE(getOption("rlsquiz.save_csv", FALSE))
+opt_csv_path <- getOption("rlsquiz.csv_path", getwd())
+opt_user     <- getOption("rlsquiz.user", NA_character_)
+opt_default  <- getOption("rlsquiz.default_source", NULL)
 
 # -------- UI --------
 ui <- fluidPage(
   tags$head(tags$link(rel = "stylesheet", href = "styles.css")),
+  tags$title("RLS Habitat Quiz"),
   # Simple HUD (no source picker)
   div(class = "topbar",
       div(class = "right",
@@ -55,6 +56,7 @@ ui <- fluidPage(
           )
       )
   ),
+  h2("RLS Habitat Identification Quiz", class = "app-title"),
   # Main content
   div(class = "wrap",
       uiOutput("status_ui"),   # status/errors shown here if needed
@@ -70,7 +72,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
   # Determine photos root (bundled or external)
-  external_root <- getOption("coralquiz.photos_root", NULL)
+  external_root <- getOption("rlsquiz.photos_root", NULL)
   if (is.null(external_root)) {
     base_dir <- normalizePath(file.path("www", "photos"), mustWork = FALSE)
     base_path_name <- "photos"  # URL path under /www
@@ -89,13 +91,13 @@ server <- function(input, output, session) {
   }
   clear_status <- function() output$status_ui <- renderUI(NULL)
 
-  message("[coralquiz] Using base_dir: ", base_dir)
+  message("[rls_habitat_quiz] Using base_dir: ", base_dir)
 
   # Fixed, non-reactive choice of source (decided once)
   choose_source <- function() {
     if (!dir.exists(base_dir)) return(NULL)
     srcs <- collect_sources(base_dir)
-    message("[coralquiz] Sources found: ", paste(srcs, collapse = ", "))
+    message("[rls_habitat_quiz] Sources found: ", paste(srcs, collapse = ", "))
     if (!length(srcs)) return(NULL)
     if (!is.null(opt_default) && opt_default %in% srcs) opt_default else srcs[1]
   }
@@ -178,7 +180,7 @@ server <- function(input, output, session) {
   observeEvent(TRUE, {
     # pick source once
     rv$current_source <- choose_source()
-    message("[coralquiz] Using source: ", rv$current_source %||% "<none>")
+    message("[rls_habitat_quiz] Using source: ", rv$current_source %||% "<none>")
 
     if (is.null(rv$current_source)) {
       show_status("No sources found under the photos directory.")
@@ -199,7 +201,7 @@ server <- function(input, output, session) {
       filename = rv$current$filename
     )
     tags$div(class = "img-wrap",
-             tags$img(src = src, class = "flashcard-img", alt = "coral image"))
+             tags$img(src = src, class = "flashcard-img", alt = "RLS habitat image"))
   })
 
   output$options_ui <- renderUI({
@@ -278,7 +280,7 @@ server <- function(input, output, session) {
         stringsAsFactors = FALSE
       )
       fn <- file.path(opt_csv_path,
-                      sprintf("coralquiz_results_%s.csv", format(Sys.time(), "%Y%m%d_%H%M%S")))
+                      sprintf("rlsquiz_results_%s.csv", format(Sys.time(), "%Y%m%d_%H%M%S")))
       try(utils::write.csv(out, fn, row.names = FALSE), silent = TRUE)
     }
   }

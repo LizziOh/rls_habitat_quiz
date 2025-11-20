@@ -1,6 +1,6 @@
-coral_quiz
+RLS_habitat_quiz
 
-Flashcard-style coral identification practice and quiz app in R.
+Flashcard-style identification practice and quiz app in R.
 Reads your photos from simple folders (per location → per species), launches a Shiny app, and (optionally) records quiz scores.
 
 ✨ What it does
@@ -13,22 +13,25 @@ Zero data wrangling: just put photos in folders; names become labels.
 
 Multiple locations/projects: add a new top-level folder, no code changes.
 
-Supports jpg, jpeg, png, webp. Requires ≥ 4 species per location.
+Supports jpg, jpeg, JPEG, png, webp. Requires ≥ 4 species per location.
 
+# Install remotes if not already installed
 install.packages("remotes")
 
-remotes::install_github("dohertyml/coralquiz") 
+# Install the RLS Habitat Quiz package from GitHub
+remotes::install_github("LizziOh/rls_habitat_quiz")
 
-library(coralquiz)
+# Load the package
+library(rls_habitat_quiz)
 
-library(coralquiz)
+# Launch practice mode (default folder: "rls_catalogue")
+rls_practice()
 
-# PRACTICE: free play, immediate feedback
-practice("caribbean_benthos")
-
-# QUIZ: graded run (20 questions by default)
-quiz("caribbean_benthos", n = 20)
+# Launch quiz mode with 20 questions
+rls_quiz("rls_catalogue", n = 20)
 
 # Optional: save a CSV summary of results
-quiz("caribbean_benthos", n = 20, save_csv = TRUE, csv_path = getwd(), user = "YOURNAMEHERE")
+quiz("rls_catalogue", n = 20, save_csv = TRUE, csv_path = getwd(), user = "YOURNAMEHERE")
+
+
 
