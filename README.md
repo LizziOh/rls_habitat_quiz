@@ -11,17 +11,17 @@ This version has been adapted to include RLS images, new folder structure, and r
 Users can adapt this without code changes by adding a new top-level folder containing other labels to learn and their images.
 
 Supports jpg, jpeg, JPEG, png, webp. Requires ≥ 4 species per location.
-------------------
-Installation
 
+Installation
+------------------
 Install remotes if not already installed:
 install.packages("remotes")
 
 Install the RLS Habitat Quiz package from GitHub:
 remotes::install_github("LizziOh/rls_habitat_quiz")
---------------------
-Usage
 
+Usage
+------------------
 Load the package:
 library(rls_habitat_quiz)
 
@@ -31,14 +31,14 @@ rls_practice()
 Launch quiz mode with 20 questions:
 rls_quiz("rls_catalogue", n = 20)
 
--------------------
-Adding new image folders
 
+Adding new image folders
+------------------
 Add folders under inst/app/www/photos/<source>/<species>/images
 Each <source> folder will be recognized automatically
 
--------------------
-Acknowledgements
 
+Acknowledgements
+------------------
 Original coralquiz package by Matthew Doherty
 Thanks for sharing the coralquiz framework that we adapted for Reef Life Survey habitats.
