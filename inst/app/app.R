@@ -280,7 +280,7 @@ server <- function(input, output, session) {
         stringsAsFactors = FALSE
       )
       fn <- file.path(opt_csv_path,
-                      sprintf("rlsquiz_results_%s.csv", format(Sys.time(), "%Y%m%d_%H%M%S")))
+                      sprintf("rls_habitat_quiz_results_%s.csv", format(Sys.time(), "%Y%m%d_%H%M%S")))
       try(utils::write.csv(out, fn, row.names = FALSE), silent = TRUE)
     }
   }

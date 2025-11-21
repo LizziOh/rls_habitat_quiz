@@ -4,9 +4,9 @@
 \alias{rls_practice}
 \title{Launch the RLS Habitat ID practice app}
 \usage{
-rls_practice(source = NULL, photos_root = NULL)
+rls_practice(source = "rls_catalogue", photos_root = NULL)
 
-rls_practice(source = NULL, photos_root = NULL)
+rls_practice(source = "rls_catalogue", photos_root = NULL)
 }
 \arguments{
 \item{source}{Optional name of the image source folder (e.g. "rls_catalogue").}
