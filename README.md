@@ -24,7 +24,7 @@ remotes::install_github("LizziOh/rls_habitat_quiz")
 Usage
 ------------------
 Load the package:
-library(rls_habitat_quiz)
+library(rls.habitat.quiz)
 
 Launch practice mode (default folder: "rls_catalogue"):
 rls_practice()

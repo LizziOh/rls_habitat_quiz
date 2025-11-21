@@ -62,7 +62,7 @@ run_rls_app <- function(mode,
   if (file.exists(file.path(app_dir_local, "app.R"))) {
     app_dir <- normalizePath(app_dir_local, mustWork = TRUE)
   } else {
-    app_dir <- system.file("app", package = "rls_habitat_quiz")
+    app_dir <- system.file("app", package = "rls.habitat.quiz")
   }
 
   if (!nzchar(app_dir)) {

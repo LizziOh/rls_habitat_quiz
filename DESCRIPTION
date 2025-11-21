@@ -1,4 +1,4 @@
-Package: rls_habitat_quiz
+Package: rls.habitat.quiz
 Title: Reef Life Survey Habitat labels Flashcards and Quiz
 Version: 0.1.0
 Authors@R: c(person("Matthew Doherty", "", role = c("aut","cph"), email = "dohertym@protonmail.com"),person("Lizzi Oh", 
