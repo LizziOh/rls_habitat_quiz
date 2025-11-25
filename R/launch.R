@@ -5,7 +5,7 @@
 #' @param source Default location/project folder to use (e.g., "rls_catalogue")
 #' @param photos_root Optional external folder containing sources and species subfolders
 #' @export
-rls_practice <- function(source = "rls_catalogue", photos_root = NULL) {
+rls_practice <- function(source = NULL, photos_root = NULL) {
   run_rls_app(
     mode        = "practice",
     source      = source,
@@ -27,7 +27,7 @@ rls_practice <- function(source = "rls_catalogue", photos_root = NULL) {
 #' @param csv_path Directory to write the CSV into
 #' @param user Optional user name recorded in the CSV
 #' @export
-rls_quiz <- function(source      = "rls_catalogue",
+rls_quiz <- function(source      = NULL,
                      n           = 20,
                      photos_root = NULL,
                      save_csv    = FALSE,

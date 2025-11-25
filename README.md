@@ -16,23 +16,31 @@ Supports jpg, jpeg, JPEG, png, webp. Requires ≥ 4 species per location.
 Installation
 ------------------
 Install remotes if not already installed:
+
 install.packages("remotes")
 
 Install the RLS Habitat Quiz package from GitHub:
+
 remotes::install_github("LizziOh/rls_habitat_quiz")
 
 Usage
 ------------------
 Load the package:
+
 library(rls.habitat.quiz)
 
 Launch practice mode (default folder: "rls_catalogue"):
+
 rls_practice()
+
 rls("rls_catalogue")
+
 rls("rls_RRH")
 
 Launch quiz mode with 20 questions:
+
 rls_quiz("rls_catalogue", n = 20)
+
 rls_quiz("rls_RRH", n = 20)
 
 Adding new image folders

@@ -5,7 +5,7 @@
 \title{Launch a graded RLS quiz}
 \usage{
 rls_quiz(
-  source = "rls_catalogue",
+  source = NULL,
   n = 20,
   photos_root = NULL,
   save_csv = FALSE,

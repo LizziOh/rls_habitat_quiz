@@ -4,7 +4,7 @@
 #' @param photos_root Optional external path overriding inst/app/www/photos.
 #'
 #' @export
-rls_practice <- function(source = "rls_catalogue", photos_root = NULL) {
+rls_practice <- function(source = NULL, photos_root = NULL) {
 
   # Use local app in development (inst/app)
   local_app <- file.path("inst", "app")
