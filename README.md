@@ -28,10 +28,12 @@ library(rls.habitat.quiz)
 
 Launch practice mode (default folder: "rls_catalogue"):
 rls_practice()
+rls("rls_catalogue")
+rls("rls_RRH")
 
 Launch quiz mode with 20 questions:
 rls_quiz("rls_catalogue", n = 20)
-
+rls_quiz("rls_RRH", n = 20)
 
 Adding new image folders
 ------------------
