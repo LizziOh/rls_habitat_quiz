@@ -1,17 +1,13 @@
 RLS Habitat Quiz
 ------------------
 
-A flashcard and quiz app to learn Reef Life Survey habitat labels in R
+A flashcard and quiz app to learn Reef Life Survey habitat labels
 
-This reads your photos from simple folders (per labelling scheme → per label), launches a Shiny app, and (optionally) records quiz scores.
+It launches a Shiny app from R that runs in a web interface. Habitat images and clickable label options are presented. Optionally, users can record quiz scores or add a folder of their own images and labels to learn.
 
 Forked from: coralquiz by Matthew Doherty:  https://github.com/dohertyml/coralquiz
 This version has been adapted to include RLS images, new folder structure, and renamed functions.
 
-
-Users can adapt this without code changes by adding a new top-level folder containing other labels to learn and their images.
-
-Supports jpg, jpeg, JPEG, png, webp. Requires ≥ 4 species per location.
 
 Installation
 ------------------
@@ -45,9 +41,12 @@ rls_quiz("rls_RRH", n = 20)
 
 Adding new image folders
 ------------------
+Users can adapt this without code changes by referencing their own new top-level folder containing other labels and associated images. Requires ≥ 4 species per top-level folder, with sub-folders named as label names containing associated images. Supports jpg, jpeg, JPEG, png, webp. 
+
 Add folders under inst/app/www/photos/<source>/<species>/images
 Each <source> folder will be recognized automatically
 
+eg. rls_quiz("<source>", n = 20)
 
 Acknowledgements
 ------------------
