@@ -27,28 +27,25 @@ library(rls.habitat.quiz)
 
 Launch practice mode (default folder: "rls_catalogue"):
 
-rls_practice() *this launches the standard Reef LIfe Survey label scheme exemplar image set*
+rls_practice()   *this launches the standard Reef Life Survey label scheme exemplar image set*
 
-rls("rls_catalogue") *this launches the standard Reef LIfe Survey label scheme exemplar image set*
+rls("rls_catalogue")   *this launches the standard Reef Life Survey label scheme exemplar image set*
 
-rls("rls_RRH")  *this launches the Reef Repair Hub label scheme exemplar image set*
+rls("rls_RRH")    *this launches the Reef Repair Hub label scheme exemplar image set*
 
 Launch quiz mode with 20 questions:
 
-rls_quiz() *this launches the standard Reef LIfe Survey label scheme exemplar image set with 20 questions*
+rls_quiz()   *this launches the standard Reef Life Survey label scheme exemplar image set with 20 questions*
 
-rls_quiz("rls_catalogue", n = 20) *this launches the standard Reef LIfe Survey label scheme exemplar image set*
+rls_quiz("rls_catalogue", n = 20)   *this launches the standard Reef Life Survey label scheme exemplar image set*
 
-rls_quiz("rls_RRH", n = 20) *this launches the Reef Repair Hub label scheme exemplar image set*
+rls_quiz("rls_RRH", n = 20)   *this launches the Reef Repair Hub label scheme exemplar image set*
 
 Adding new image folders
 ------------------
-Users can adapt this without code changes by referencing their own new top-level folder containing other labels and associated images. Requires ≥ 4 species per top-level folder, with sub-folders named as label names containing associated images. Supports jpg, jpeg, JPEG, png, webp. 
+Users can adapt this without code changes by referencing their own new top-level folder containing other labels and associated images. Requires ≥ 4 species per top-level folder, with sub-folders named as label names containing associated images. Supports jpg, jpeg, JPEG, png, webp. The folder will be automatically recognised when placed in the r package library under ...rls.habitat.quiz/app/www/photos
 
-Add folders under inst/app/www/photos/<source>/<species>/images
-Each <source> folder will be recognized automatically
-
-eg. rls_quiz("<source>", n = 20)
+eg. rls_practice("*top-level folder*")
 
 Acknowledgements
 ------------------
